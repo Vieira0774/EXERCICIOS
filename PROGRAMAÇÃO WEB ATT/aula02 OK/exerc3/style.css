@@ -1,0 +1,37 @@
+form{
+    border-width: 22px;
+    border-style: double;
+    border-color: red;
+    font-family: Verdana;
+    font-size: 18pt;
+    padding: 30px;
+    width: 400px;
+}
+
+.valor1{
+    font-family: Verdana;
+    font-size: 18pt;
+    border-width: 1px;
+    border-color: black;
+    border: solid;
+    background-color: yellow;
+
+}
+
+.valor2{
+    font-family: Verdana;
+    font-size: 18pt;
+    border-width: 1px;
+    border-color: black;
+    border: solid;
+    background-color: yellow;
+}
+
+.resultado{
+    font-family: Verdana;
+    font-size: 18pt;
+    border-width: 1px;
+    border-color: black;
+    border: solid;
+    background-color: yellow;
+}

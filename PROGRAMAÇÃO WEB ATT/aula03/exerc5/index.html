@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soma de Três Números</title>
+</head>
+<body>
+    <h1>Calculadora de Soma de Três Números</h1>
+
+    <p>Digite três números inteiros para calcular a soma:</p>
+
+    <input type="text" id="numero1" placeholder="Número 1">
+    <input type="text" id="numero2" placeholder="Número 2">
+    <input type="text" id="numero3" placeholder="Número 3">
+
+    <button onclick="calcularSoma()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSoma() {
+            var numero1 = parseInt(document.getElementById("numero1").value);
+            var numero2 = parseInt(document.getElementById("numero2").value);
+            var numero3 = parseInt(document.getElementById("numero3").value);
+
+            var soma = numero1 + numero2 + numero3;
+
+            document.getElementById("resultado").textContent = "A soma dos números é: " + soma;
+        }
+
+
+    </script>
+</body>
+</html>

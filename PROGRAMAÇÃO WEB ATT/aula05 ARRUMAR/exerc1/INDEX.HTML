@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Parcelas</title>
+</head>
+<body>
+    <h1>Calculadora de Parcelas</h1>
+    <form>
+        <label for="valor_compra">Valor da Compra (R$):</label>
+        <input type="number" id="valor_compra" step="0.01">
+        <br>
+        <label for="quantidade_parcelas">Quantidade de Parcelas:</label>
+        <select id="quantidade_parcelas">
+            <option value="1">1 Parcela</option>
+            <option value="2">2 Parcelas</option>
+            <option value="3">3 Parcelas</option>
+        </select>
+        <br>
+        <input type="button" value="Calcular" onclick="calcularParcelas()">
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularParcelas() {
+            const valorCompra = parseFloat(document.getElementById('valor_compra').value);
+            const quantidadeParcelas = parseInt(document.getElementById('quantidade_parcelas').value);
+
+            const juros = [0, 0.03, 0.07];
+            const valorParcela = valorCompra * (1 + juros[quantidadeParcelas - 1]) / quantidadeParcelas;
+
+            document.getElementById('resultado').innerHTML = `Valor de cada parcela: R$ ${valorParcela.toFixed(2)} com ${juros[quantidadeParcelas - 1] * 100}% de juros.`;
+        }
+    </script>
+</body>
+</html>

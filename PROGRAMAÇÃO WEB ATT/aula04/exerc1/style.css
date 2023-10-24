@@ -1,0 +1,23 @@
+table {
+    border: 10px solid black;
+    width: 50%;
+    font-size: medium;
+    text-align: center;
+    
+}
+
+table td {
+    border: 10px solid black;
+    width: 50%;
+    font-size: medium;
+    text-align: center;
+    
+}
+
+table tr {
+    border: 10px solid black;
+    width: 50%;
+    font-size: medium;
+    text-align: center;
+   
+}

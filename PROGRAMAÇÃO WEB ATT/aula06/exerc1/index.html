@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="meuForm">
+       nome : <input type="text" id="nome" >
+        sobrenome: <input type="text" id="sobrenome" >
+        <button type="button" id="btnAlert"> Alerta</button>
+        <button type="button" id="btnFlip">Inverter</button><br>
+        <br>
+        Clique aqui para informar o ano que você nasceu: <button type="button" id="idade">clique aqui</button><br>
+        <br>
+        <button type="button" id="calcular">Calcular idade</button><br>
+        <br>
+        <p id="paragrafo"></p>
+      
+    </form>
+
+    <script>
+        const nome1 = document.getElementById('nome');
+        const sobrenome1 = document.getElementById('sobrenome');
+        const btnAlert = document.getElementById('btnAlert');
+        const btnFlip = document.getElementById('btnFlip');
+        const idade = document.getElementById("idade")
+        const calcular = document.getElementById("calcular")
+        const paragrafo = document.getElementById("paragrafo")
+      
+
+        btnAlert.addEventListener('click', function ()  {
+            const nome = nome1.value;
+            const sobrenome = sobrenome1.value;
+            alert(`Nome: ${nome}\n Sobrenome: ${sobrenome}`);
+            console.log(`Nome: ${nome}, Sobrenome: ${sobrenome}`);
+        });
+
+        let flipInterval;
+        btnFlip.addEventListener('click', function () {
+            flipInterval = setInterval(function () {
+                const temp = nome1.value;
+                nome1.value = sobrenome1.value;
+                sobrenome1.value = temp;
+            }, 2000);
+        });
+
+        idade.addEventListener("click", function (){
+            anoNascimento = prompt("Digite o ano em que você nasceu")
+        })
+
+        calcular.addEventListener("click", function(){
+            let anoAtual = new Date().getFullYear()
+            let resultado = anoAtual - parseInt(anoNascimento)
+            paragrafo.innerHTML = resultado
+        })
+        
+
+       
+
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Pagamento</title>
+</head>
+<body>
+    <h1>Calculadora de Pagamento</h1>
+    
+    <label for="valorProduto">Valor do Produto: R$</label>
+    <input type="number" id="valorProduto" step="0.01">
+    
+    <label for="modalidadePagamento">Modalidade de Pagamento:</label>
+    <select id="modalidadePagamento">
+        <option value="1">À vista</option>
+        <option value="2">Débito</option>
+        <option value="3">Crédito</option>
+    </select>
+    
+    <button onclick="calcularValorAPagar()">Calcular</button>
+    
+    <p>Valor Real do Produto: R$ <span id="valorReal"></span></p>
+    <p>Valor a ser Pago: R$ <span id="valorAPagar"></span></p>
+    
+    <script>
+        function calcularValorAPagar() {
+            var valorProduto = parseFloat(document.getElementById("valorProduto").value);
+            var modalidadePagamento = parseInt(document.getElementById("modalidadePagamento").value);
+            
+            var valorReal = valorProduto;
+            var valorAPagar;
+
+            if (modalidadePagamento === 1) {
+                valorAPagar = valorProduto - (0.10 * valorProduto);  // À vista (10% de desconto)
+            } else if (modalidadePagamento === 2) {
+                valorAPagar = valorProduto + (0.02 * valorProduto);  // Débito (2% de juros)
+            } else if (modalidadePagamento === 3) {
+                valorAPagar = valorProduto + (0.07 * valorProduto);  // Crédito (7% de juros)
+            }
+            
+            document.getElementById("valorReal").textContent = valorReal.toFixed(2);
+            document.getElementById("valorAPagar").textContent = valorAPagar.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p></p>
+
+    <script>
+        var base = parseFloat(prompt("Digite o valor da base do triângulo: "));
+var altura = parseFloat(prompt("Digite o valor da altura do triângulo: "));
+
+
+var area = (base * altura) / 2;
+
+var areatriangulo = document.getElementsByTagName("p")[0]
+
+areatriangulo.textContent = "A área do triângulo com base " + base + " e altura " + altura + " é " + area;
+
+    </script>
+    
+</body>
+</html>
